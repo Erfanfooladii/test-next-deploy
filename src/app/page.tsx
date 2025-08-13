@@ -9,7 +9,7 @@ export default async function Home() {
     return data;
   };
 
-  const { name, bio, avatar_url } = await getProjects();
+  const { name, bio, followers, avatar_url } = await getProjects();
   return (
     <div className="h-full flex flex-col gap-2 items-center justify-center">
       <div className="p-7 flex flex-col border-blue-600 border-1 rounded-lg gap-2 items-center justify-center">
@@ -22,6 +22,12 @@ export default async function Home() {
         />
         <h1 className="font-bold text-3xl text-blue-900 text-center">{name}</h1>
         <p>{bio}</p>
+
+        <div className="flex">
+          <h3>
+            followers: <b>{followers}</b>
+          </h3>
+        </div>
         <Link
           href="resume"
           className="rounded-lg text-blue-600 p-2 cursor-pointer hover:bg-blue-600 hover:text-blue-200 bg-blue-300"
